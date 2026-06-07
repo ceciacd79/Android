@@ -28,7 +28,7 @@ jobs:
         FLET_DIR=$(dirname $(find . -name "main.py" | head -n 1))
         echo "FLET_DIR=$FLET_DIR" >> $GITHUB_ENV
         cd $FLET_DIR
-        pip install flet flet-charts
+        pip install flet==0.85.1 flet-charts==0.85.1
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: Set up Java
@@ -40,7 +40,7 @@ jobs:
     - name: Set up Flutter
       uses: subosito/flutter-action@v2
       with:
-        flutter-version: '3.22.x'
+        flutter-version: '3.19.x'
         channel: 'stable'
 
     - name: Prepare Common Files for Flet
@@ -79,13 +79,15 @@ jobs:
         FLET_DIR=$(dirname $(find . -name "main.py" | head -n 1))
         echo "FLET_DIR=$FLET_DIR" >> $GITHUB_ENV
         cd $FLET_DIR
-        pip install flet flet-charts schedule requests mariadb mysql-connector-python mysqlclient paho-mqtt pandas paramiko pillow psutil pyarrow python-telegram-bot reportlab sqlalchemy alembic pymysql icalendar
+        # Installiamo flet alla versione esatta + tutte le dipendenze del tuo requirements.txt
+        pip install flet==0.85.1 flet-charts==0.85.1
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: Set up Flutter
       uses: subosito/flutter-action@v2
       with:
-        flutter-version: '3.22.x'
+        # Forziamo la build a usare Flutter 3.19 (compatibile al 100% con Flet 0.85)
+        flutter-version: '3.19.x'
         channel: 'stable'
 
     - name: Prepare Common Files for Flet (Windows)
@@ -99,9 +101,9 @@ jobs:
       shell: bash
       run: |
         cd ${{ env.FLET_DIR }}
-        # 🔑 FORZIAMO L'INCLUSIONE DI SCHEDULE E DELLE ALTRE LIBRERIE DENTRO L'EXE DI FLET
-        echo "y" | flet build windows --exclude flet --add-pip-packages schedule,requests,mariadb,mysql-connector-python,mysqlclient,paho-mqtt,pandas,paramiko,pillow,psutil,pyarrow,python-telegram-bot,reportlab,sqlalchemy,alembic,pymysql,icalendar
-        
+        # Comando pulito per Flet 0.85.1
+        echo "y" | flet build windows --exclude flet
+
     - name: Upload Windows Artifact
       uses: actions/upload-artifact@v4
       with:
