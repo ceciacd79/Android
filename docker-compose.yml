@@ -1,0 +1,353 @@
+# -- Connettiti come root al MariaDB server
+# mysql -u root -p
+# -- Crea l'utente per accesso da Docker/container
+# CREATE USER 'Ceciacd'@'172.18.%' IDENTIFIED BY 'AntoFedeGio';
+# GRANT ALL PRIVILEGES ON Home.* TO 'Ceciacd'@'172.18.%';
+# -- Oppure per accesso da qualsiasi IP
+# CREATE USER 'Ceciacd'@'%' IDENTIFIED BY 'AntoFedeGio';
+# GRANT ALL PRIVILEGES ON Home.* TO 'Ceciacd'@'%';
+
+# usbipd list  # Trova il BUSID del Sonoff
+# usbipd bind --busid <BUSID>
+# usbipd attach --wsl --busid <BUSID>
+# New-NetFirewallRule -DisplayName "Allow WSL2 Docker" -Direction Inbound -Action Allow -Protocol TCP -LocalPort 1883,3306
+
+# docker exec -it Database mysql -u root -p -e "CREATE USER 'Ceciacd'@'%' IDENTIFIED BY 'AntoFedeGio'; GRANT ALL PRIVILEGES ON Home.* TO 'Ceciacd'@'%'; FLUSH PRIVILEGES;"
+
+# .
+# ├── docker-compose.yml
+# ├── .env                                                                          # ⬅️ Variabili Ambientali
+# ├── requirements.txt                                                              # ⬅️ File unico per tutti i servizi
+# ├── full_backUp.sh                                                                # ⬅️ Batch file unico per tutti i servizi FULL BACKUP con crone
+# ├── notify_backUp.sh                                                              # ⬅️ Script di notifica per backup completato
+# ├── vpn_on.sh                                                                     # ⬅️ Script per attivare la VPN
+# ├── vpn_off.sh                                                                    # ⬅️ Script per disattivare la VPN
+# │
+# ├── common/                                                                       # ⬅️ Directory per file comuni (opzionale)
+# │   └── home.py                                                                   # ⬅️ Il tuo script Python custom SQL
+# │
+# ├── Flet/
+# │   └── Dockerfile                                                                # ⬅️ Obbligatorio per il servizio 'python_script'
+# │   └── main.py                                                                   # ⬅️ Il tuo script Python che utilizza MQTT e MySQL
+# │
+# ├── Tele/
+# │   └── Dockerfile                                                                # ⬅️ Obbligatorio per il servizio 'python_script'
+# │   └── main.py                                                                   # ⬅️ Il tuo script Python che utilizza MQTT e MySQL
+# │
+# ├── Mqtt/
+# │   ├── alembic.ini                                                               # ⬅️ Generato con 'alembic init alembic' stando dentro la cartella Mqtt
+# │   ├── alembic/                                                                  # ⬅️ Cartella generata automaticamente (contiene env.py e versions/)
+# │   │   ├── env.py                                                                # ⬅️ Il file da modificare (con get_db_url() e target_metadata)
+# │   │   └── versions/                                                             # ⬅️ Qui Alembic salverà i file .py delle modifiche automatiche
+# │   └── Dockerfile                                                                # ⬅️ Obbligatorio per il servizio 'python_script'
+# │   └── main.py                                                                   # ⬅️ Il tuo script Python che utilizza MQTT e MySQL
+# │   └── Data/                                                                     # ⬅️ Directory per i dati utilizzati dallo script
+# │   └── LOG/                                                                      # ⬅️ Directory per i LOG
+# │
+# ├── mosquitto/
+# │   ├── mosquitto.conf                                                            # ⬅️ File di configurazione di Mosquitto
+# │   ├── data/                                                                     # ⬅️ Directory per i dati persistenti del broker
+# │   └── log/                                                                      # ⬅️ Directory per i log del broker
+# │
+# ├── zigbee2mqtt/
+# │   └── data/                                                                     # ⬅️ Directory per la configurazione e i dati di Zigbee2MQTT
+# │
+# └── mysql/
+#    └── data/                                                                      # ⬅️ Directory per i dati persistenti di MySQL
+
+services:
+  ##########################################################
+  # Servizio 1: Broker MQTT (Mosquitto)
+  ##########################################################
+  mqtt:
+    image: eclipse-mosquitto:latest
+    container_name: mosquitto
+    restart: unless-stopped
+    ports:
+      - "1883:1883"                                                                   # 👀  Porta standard MQTT
+      - "9001:9001"                                                                   # 👀  Porta per Websockets
+    volumes:
+      - ${ROOTDIR}/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ${ROOTDIR}/mosquitto/data:/mosquitto/data                                     # 👀  Opzionale: per persistere i dati del broker
+      - ${ROOTDIR}/mosquitto/log:/mosquitto/log                                       # 👀  Opzionale: per persistere i log
+    environment:
+      - TZ=Europe/Rome
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"                                                               # 👀  Massimo 10 Megabyte per file
+        max-file: "7"                                                                 # 👀  Mantiene solo gli ultimi 7 file
+  ##########################################################
+  # Servizio 2: Gateway Zigbee a MQTT (Zigbee2MQTT)
+  ##########################################################
+  zigbee2mqtt:
+    image: koenkk/zigbee2mqtt:latest
+    container_name: zigbee2mqtt
+    restart: unless-stopped
+    # Assicurati che l'adattatore USB sia esposto al container
+    # MODIFICA il percorso del dispositivo seriale in base al tuo ambiente (es. /dev/ttyACM0 o /dev/ttyUSB0)
+    devices:
+      - /dev/serial/by-id/usb-ITead_Sonoff_Zigbee_3.0_USB_Dongle_Plus_fea3eaf88774ef11a6dfc68c8fcc3fa0-if00-port0:/dev/ttyUSB0  # Gorizia
+#      - /dev/serial/by-id/usb-ITead_Sonoff_Zigbee_3.0_USB_Dongle_Plus_a283aa5fb4a4ed11b361e8a32981d5c7-if00-port0:/dev/ttyUSB0  # Roma
+    volumes:
+      - ${ROOTDIR}/zigbee2mqtt/data:/app/data
+      - /run/udev:/run/udev:ro                                                        # 👀 Necessario per l'accesso ai dispositivi USB
+    ports:
+      - "8080:8080"                                                                   # 👀 Porta per il frontend web
+    environment:
+      - TZ=Europe/Rome
+    depends_on:
+      - mqtt                                                                          # 👀 Assicura che l'MQTT parta prima di Zigbee2MQTT
+  ##########################################################
+  # Servizio 3: Database MySQL
+  ##########################################################
+  mysql:
+    image: mysql:8.0
+    container_name: Database
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "3306:3306"
+    volumes:
+      - ${ROOTDIR}/mysql/data:/var/lib/mysql
+      - ${ROOTDIR}/mysql/init:/docker-entrypoint-initdb.d                             # 👀 Init DB user
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 5s                                                                    # 👀 Ogni quanto controllare
+      timeout: 5s                                                                     # 👀 Tempo massimo per una risposta
+      retries: 5                                                                      # 👀 Quanti tentativi falliti prima di considerare il container "unhealthy"
+      start_period: 30s                                                               # 👀 Tempo concesso all'avvio prima di iniziare i controlli
+  ##########################################################
+  # Servizio 4: phpMyAdmin (Gestione Database Web)
+  ##########################################################
+  phpmyadmin:
+#    image: arm32v7/phpmyadmin:latest                                                 # 👀 Per architettura ARM (Raspberry Pi)
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    environment:
+      - PMA_HOST=mysql
+      - PMA_PORT=3306 
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - TZ=Europe/Rome
+    ports:
+      - "8081:80" 
+    depends_on:
+      - mysql
+  ##########################################################
+  # Servizio 5: Script mqtt
+  ##########################################################
+  mqtt_py:
+    build:
+      context: .
+      dockerfile: ./Mqtt/Dockerfile
+    container_name: cont_mqtt
+    restart: always
+    env_file: .env
+    command: sh -c "alembic upgrade head && python main.py"                           # 👀 Esegue le migrazioni Alembic prima di avviare lo scrit
+    volumes:
+      - ${ROOTDIR}/Mqtt/Data:/app/Data
+      - ${ROOTDIR}/Mqtt/LOG:/app/LOG
+    depends_on:
+      mqtt:                                                                           # 👀 Lo script ha bisogno del broker MQTT per funzionare
+        condition: service_started
+      mysql:
+        condition: service_healthy
+  ##########################################################
+  # Servizio 6: Flet Dashboard (Interfaccia Grafica Web)
+  ##########################################################
+  flet_py:
+    build:
+      context: .                                                                      # 👀 Cartella dove metterai il Dockerfile e l'app Flet
+      dockerfile: ./Flet/Dockerfile
+    container_name: cont_flet
+    restart: always
+    ports:
+      - "8550:8550"                                                                   # 👀 Porta per accedere alla Dashboard via browser
+    env_file: .env
+    volumes:
+      - ${ROOTDIR}/Flet/Data:/app/Data
+      - ${ROOTDIR}/Flet/LOG:/app/LOG
+    depends_on:
+      mysql:
+        condition: service_healthy
+      mqtt:
+        condition: service_started
+      mqtt_py:
+        condition: service_started
+ ##########################################################
+ # Servizio 7: Telegram Bot
+ ##########################################################
+  tele_py:
+    build:
+      context: .                                                                      # 👀 Cartella dove metterai il Dockerfile e l'app Telegram
+      dockerfile: ./Tele/Dockerfile
+    container_name: cont_tele
+    restart: always
+    env_file: .env
+    volumes:
+      - ${ROOTDIR}/Tele/Data:/app/Data
+      - ${ROOTDIR}/Tele/LOG:/app/LOG
+      - ${ROOTDIR}/vpn_on.sh:/app/vpn_on.sh                                           # ⬅️ Mappa lo script ON
+      - ${ROOTDIR}/vpn_off.sh:/app/vpn_off.sh                                         # ⬅️ Mappa lo script OFF
+    depends_on:
+      mysql:
+        condition: service_healthy
+      mqtt:
+        condition: service_started
+      mqtt_py:
+        condition: service_started
+ ##########################################################
+ # Servizio 8: Backup Database MySQL
+ ##########################################################
+  mysql_backup:
+    image: fradelg/mysql-cron-backup:latest
+    container_name: Database_Backup
+    restart: always
+    env_file: .env
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_USER=root
+      - MYSQL_PASS=${MYSQL_ROOT_PASSWORD}
+      - MAX_BACKUPS=7                                                                 # 👀 Mantiene gli ultimi 7 giorni di backup
+      - CRON_TIME=0 3 * * *                                                           # 👀 Esegue il backup ogni notte alle 03:00
+      - GZIP_LEVEL=9                                                                  # 👀 Massima compressione
+    volumes:
+      - ${ROOTDIR}/BackUp:/backup                                                     # 👀 Mappa la cartella di destinazione del backup
+      - ${ROOTDIR}/notify_backup.sh:/notify_backup.sh                                 # 👀 Mappa lo script
+    command: >
+      sh -c "echo '0 3 * * * /backup.sh && /notify_backup.sh' > /etc/crontabs/root && crond -f -L /dev/stdout"
+    depends_on:
+      mysql:
+        condition: service_healthy
+ ##########################################################
+ # Servizio 9: Pi-hole (Network Filter)
+ ##########################################################
+  pihole:
+    container_name: pihole
+    hostname: pihole-zima
+    image: pihole/pihole:latest
+    # Rimuovi network_mode: host se c'era
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "8082:80/tcp" # Pi-hole sarà su http://${IP_NAS}:8082/admin
+    environment:
+      - TZ=Europe/Rome
+      - WEBPASSWORD=${PIHOLE_PASSWORD}
+      - FTLCONF_LOCAL_IPV4=${IP_NAS}
+      - PIHOLE_INTERFACE=br0         # Forza Pi-hole ad ascoltare sul tuo bridge OMV
+      - DNSMASQ_LISTENING=local      # Risponde solo ai dispositivi sulla tua rete locale
+    volumes:
+      - ${ROOTDIR}/pihole/etc-pihole:/etc/pihole
+      - ${ROOTDIR}/pihole/etc-dnsmasq.d:/etc/dnsmasq.d
+    cap_add:
+      - NET_ADMIN
+      - SYS_NICE
+      - SYS_TIME
+    depends_on:
+      - mysql # Opzionale, se vuoi che il DB sia pronto prima di altri servizi
+    restart: always
+ ##########################################################
+ # Servizio 10: Rclone Sync (Cloud Backup)
+ ##########################################################
+  rclone:
+    image: rclone/rclone:latest
+    container_name: rclone_sync
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=Europe/Rome
+    volumes:
+      - ${ROOTDIR}/rclone/config:/config/rclone
+      # Mappatura delle tre cartelle specifiche
+      - ${CLOUD_PATH}/onedrive:/data/onedrive
+      - ${CLOUD_PATH}/ceciacd:/data/drive_ceciacd
+      - ${CLOUD_PATH}/diegocechich:/data/drive_diegocechich
+    ports:
+      - "5572:5572"
+    command: rcd --rc-web-gui --rc-addr :5572 --rc-user ${RCLONE_WEB_USER} --rc-pass ${RCLONE_WEB_PASS} --rc-serve
+##########################################################
+# Servizio 11: Immich
+##########################################################  
+  immich-server:
+    container_name: immich_server
+    image: ghcr.io/immich-app/immich-server:${IMMICH_VERSION:-release}
+    volumes:
+      - ${UPLOAD_LOCATION}:/usr/src/app/upload
+      - /etc/localtime:/etc/localtime:ro
+    env_file:
+      - .env
+    environment:
+      - DB_HOSTNAME=${DB_HOSTNAME}     # usa immich-db 
+      - DB_PORT=${DB_PORT_IM}         # forza 5432 invece di 3306 
+      - DB_USERNAME=${DB_USERNAME_IM} # usa immich 
+      - DB_PASSWORD=${DB_PASSWORD_IM} # usa la pass di immich 
+      - DB_DATABASE_NAME=${DB_DATABASE_NAME_IM}
+    ports:
+      - '2283:2283'
+    depends_on:
+      redis:
+        condition: service_started
+      immich-db:
+        condition: service_started
+      immich-machine-learning:
+        condition: service_started
+    restart: always
+
+  immich-machine-learning:
+    container_name: immich_machine_learning
+    image: ghcr.io/immich-app/immich-machine-learning:${IMMICH_VERSION:-release}
+    volumes:
+      - model-cache:/cache
+    env_file:
+      - .env
+    restart: always
+
+  redis:
+    container_name: immich_redis
+    image: docker.io/valkey/valkey:9
+    restart: always
+
+  immich-db:  # Rinominato per non confonderlo con MySQL
+    container_name: immich_postgres
+    image: tensorchord/pgvecto-rs:pg14-v0.2.0
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD_IM}
+      POSTGRES_USER: ${DB_USERNAME_IM}
+      POSTGRES_DB: ${DB_DATABASE_NAME_IM}
+      POSTGRES_INITDB_ARGS: '--data-checksums'
+    volumes:
+      - ${DB_DATA_LOCATION}:/var/lib/postgresql/data
+    shm_size: 128mb
+    restart: always
+
+##########################################################
+# Servizio 12: Nextcloud
+##########################################################  
+  nextcloud:
+    image: nextcloud:latest
+    container_name: nextcloud
+    restart: unless-stopped
+    ports:
+      - "8084:80"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    volumes:
+      - ${ROOTDIR}/nextcloud/data:/var/www/html
+      - ${ROOTDATA}:/var/www/html/nas_documenti
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=Europe/Rome
+      # Configurazione automatica Database MySQL
+      - MYSQL_DATABASE=${NC_DB_NAME}
+      - MYSQL_USER=${NC_DB_USER}
+      - MYSQL_PASSWORD=${NC_DB_PASSWORD}
+      - MYSQL_HOST=mysql
+
+# AGGIUNGI QUESTO ALLA FINE DEL FILE (FUORI DA SERVICES)
+volumes:
+  model-cache:
