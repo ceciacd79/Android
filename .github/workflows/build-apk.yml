@@ -72,21 +72,22 @@ jobs:
       with:
         python-version: '3.11'
 
-    - name: Find Flet Directory and Install Dependencies (Windows)
+    - name: Find Flet Directory and Pre-install Dependencies Locally
       shell: bash
       run: |
         python -m pip install --upgrade pip
         FLET_DIR=$(dirname $(find . -name "main.py" | head -n 1))
         echo "FLET_DIR=$FLET_DIR" >> $GITHUB_ENV
         cd $FLET_DIR
-        # Installiamo flet alla versione esatta + tutte le dipendenze del tuo requirements.txt
         pip install flet==0.85.1 flet-charts==0.85.1
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        
+        # 🔑 FORZIAMO L'INSTALLAZIONE DI TUTTI I PACCHETTI DIRETTAMENTE NELLA CARTELLA DELL'APP
+        # In questo modo Flet 0.85.1 includerà i file .py delle librerie direttamente nell'EXE finali!
+        pip install -r requirements.txt --target .
 
     - name: Set up Flutter
       uses: subosito/flutter-action@v2
       with:
-        # Forziamo la build a usare Flutter 3.19 (compatibile al 100% con Flet 0.85)
         flutter-version: '3.19.x'
         channel: 'stable'
 
@@ -101,7 +102,6 @@ jobs:
       shell: bash
       run: |
         cd ${{ env.FLET_DIR }}
-        # Comando pulito per Flet 0.85.1
         echo "y" | flet build windows --exclude flet
 
     - name: Upload Windows Artifact
