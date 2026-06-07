@@ -2,8 +2,8 @@ name: Build Flet APK
 
 on:
   push:
-    branches: [ main, master ] # Si attiva ogni volta che fai un push su main o master
-  workflow_dispatch: # Ti permette di avviare la build anche manualmente
+    branches: [ "**" ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -16,33 +16,41 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.11' # Scegli la versione di Python che usi
+        python-version: '3.11'
 
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flet
+        # Entra nella cartella Flet per installare i requisiti corretti
+        cd Flet
+        pip install flet flet-charts
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        cd ..
 
     - name: Set up Java
       uses: actions/setup-java@v4
       with:
         distribution: 'zulu'
-        java-version: '17' # Richiesto da Flutter/Android per compilare
+        java-version: '17'
 
     - name: Set up Flutter
       uses: subosito/flutter-action@v2
       with:
-        flutter-version: '3.22.x' # Flet si appoggia a Flutter internamente
+        flutter-version: '3.22.x'
         channel: 'stable'
+
+    - name: Prepare Common Files for Flet
+      run: |
+        # Copia la cartella common dentro Flet così Flet può impacchettarla nell'APK
+        cp -r common Flet/common
 
     - name: Build APK with Flet
       run: |
-        # Esegue il comando di build simulando l'accettazione dell'SDK
+        cd Flet
         echo "y" | flet build apk
-
+        cd ..
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
       with:
         name: flet-release-apk
-        path: build/apk/*.apk # Prende l'APK generato da Flet
+        path: Flet/build/apk/*.apk
