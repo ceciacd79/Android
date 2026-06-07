@@ -5,30 +5,36 @@ on:
     branches: [ "**" ]
   workflow_dispatch:
 
+# Forza l'uso di Node.js 24 a livello globale nel workflow
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+    # Aggiornato alla v5 (supporta Node 24)
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
+    # Aggiornato alla v6 (supporta Node 24)
     - name: Set up Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: '3.11'
 
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
-        # Entra nella cartella Flet per installare i requisiti corretti
         cd Flet
         pip install flet flet-charts
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         cd ..
 
+    # Aggiornato alla v5 (supporta Node 24)
     - name: Set up Java
-      uses: actions/setup-java@v4
+      uses: actions/setup-java@v5
       with:
         distribution: 'zulu'
         java-version: '17'
@@ -41,14 +47,13 @@ jobs:
 
     - name: Prepare Common Files for Flet
       run: |
-        # Copia la cartella common dentro Flet così Flet può impacchettarla nell'APK
         cp -r common Flet/common
 
     - name: Build APK with Flet
       run: |
         cd Flet
         echo "y" | flet build apk
-        cd ..
+        
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
       with:
