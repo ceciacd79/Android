@@ -73,17 +73,26 @@ jobs:
         python-version: '3.11'
 
     - name: Find Flet Directory and Pre-install Dependencies Locally
-      shell: bash
+      # 🔑 Cambiamo la shell in PowerShell (nativa di Windows) per gestire i percorsi senza errori
+      shell: powershell
       run: |
         python -m pip install --upgrade pip
-        FLET_DIR=$(dirname $(find . -name "main.py" | head -n 1))
-        echo "FLET_DIR=$FLET_DIR" >> $GITHUB_ENV
-        cd $FLET_DIR
-        pip install flet==0.85.1 flet-charts==0.85.1
         
-        # 🔑 FORZIAMO L'INSTALLAZIONE DI TUTTI I PACCHETTI DIRETTAMENTE NELLA CARTELLA DELL'APP
-        # In questo modo Flet 0.85.1 includerà i file .py delle librerie direttamente nell'EXE finali!
-        pip install -r requirements.txt --target .
+        # Trova la cartella contenente main.py usando comandi Windows
+        $FletDir = Get-ChildItem -Filter "main.py" -Recurse | Select-Object -First 1 | ForEach-Object { $_.DirectoryName }
+        Write-Output "Flet directory found at: $FletDir"
+        
+        # Salviamo la variabile d'ambiente per i passi successivi
+        echo "FLET_DIR=$FletDir" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+        
+        # Entriamo fisicamente nella cartella del progetto
+        cd "$FletDir"
+        
+        # Installiamo Flet e le dipendenze direttamente dentro la cartella del progetto (. significa cartella corrente)
+        pip install flet==0.85.1 flet-charts==0.85.1 --target .
+        if (Test-Path "requirements.txt") {
+            pip install -r requirements.txt --target .
+        }
 
     - name: Set up Flutter
       uses: subosito/flutter-action@v2
@@ -92,16 +101,18 @@ jobs:
         channel: 'stable'
 
     - name: Prepare Common Files for Flet (Windows)
-      shell: bash
+      shell: powershell
       run: |
-        if [ -d "common" ]; then
-          cp -r common ${{ env.FLET_DIR }}/common
-        fi
+        cd "${{ env.FLET_DIR }}"
+        if (Test-Path "../common") {
+            Copy-Item -Path "../common" -Destination "./common" -Recurse -Force
+        }
 
     - name: Build Windows EXE
-      shell: bash
+      shell: powershell
       run: |
-        cd ${{ env.FLET_DIR }}
+        cd "${{ env.FLET_DIR }}"
+        # Forziamo l'accettazione dei prompt inviando "y"
         echo "y" | flet build windows --exclude flet
 
     - name: Upload Windows Artifact
