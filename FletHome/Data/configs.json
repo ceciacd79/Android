@@ -1,0 +1,512 @@
+asdfasdfsa
+{
+  "topics": {
+    "14594": [
+      "TAPP_00",
+      "TAPP_01",
+      "TAPP_02",
+      "TAPP_03",
+      "TAPP_04",
+      "TAPP_05",
+      "TAPP_06",
+      "TAPP_07"
+    ],
+    "E2134": [
+      "MOTT_00",
+      "MOTT_01"
+    ],
+    "E2201": [
+      "DIMM_00"
+    ],
+    "E22x4": [
+      "PLUG_00"
+    ],
+    "LED2004G8": [
+      "LAMP_01"
+    ],
+    "LED2005R5-LED2106R3": [
+      "GU10_00",
+      "GU10_01",
+      "GU10_02"
+    ],
+    "LED2107C4": [
+      "LAMP_00"
+    ],
+    "SH-SC07": [
+      "BUTT_01"
+    ],
+    "SNZB-01P": [
+      "BUTT_00",
+      "BUTT_02"
+    ],
+    "SNZB-02P": [
+      "SENS_00",
+      "SENS_01"
+    ],
+    "SNZB-04P": [
+      "DOOR_00",
+      "DOOR_01",
+      "DOOR_02"
+    ],
+    "TS0201": [
+      "SENS_02",
+      "SENS_03",
+      "SENS_04",
+      "SENS_05",
+      "SENS_06",
+      "SENS_07",
+      "SENS_08",
+      "SENS_09",
+      "SENS_10",
+      "SENS_11"
+    ],
+    "TS0601": [
+      "CONS_00"
+    ],
+    "TS0601_soil_3": [
+      "SENE_00",
+      "SENE_01"
+    ],
+    "ZBMINIR2": [
+      "INTT_00",
+      "INTT_01"
+    ],
+    "ZG-222Z": [
+      "WATER_00",
+      "WATER_01",
+      "WATER_02"
+    ]
+  },
+  "device_labels": {
+    "BUTT_01": "Studio",
+    "BUTT_00": "Soggiorno",
+    "CONS_00": "Enel",
+    "DIMM_00": "Soggiorno",
+    "DOOR_00": "Porta Ingresso",
+    "GU10_00": "Soggiorno",
+    "GU10_01": "Soggiorno",
+    "GU10_02": "Camera da letto",
+    "INTT_00": "Soggiorno",
+    "INTT_01": "Bagno",
+    "LAMP_00": "Soggiorno",
+    "LAMP_01": "Camera da letto",
+    "MOTT_00": "Soggiorno",
+    "MOTT_01": "Corridoio",
+    "PLUG_00": "Studio",
+    "SENS_00": "Cucina",
+    "SENS_01": "Living",
+    "SENS_02": "Camera Principale",
+    "SENS_03": "Camera 1",
+    "SENS_04": "Camera 2",
+    "SENS_05": "Sottoscala P1",
+    "SENS_06": "Sottoscala P0",
+    "SENS_07": "Bagno Piccolo",
+    "SENS_08": "Caldaia",
+    "SENS_09": "Taverna",
+    "SENS_10": "Bagno principale",
+    "SENS_11": "Scale",
+    "SENE_00": "Giardino",
+    "SENE_01": "Giardino Retro",
+    "TAPP_00": "Finestra Soggiorno",
+    "TAPP_01": "Portafinestra Cucina",
+    "TAPP_02": "Bagno Principale",
+    "TAPP_03": "Scale 1",
+    "TAPP_04": "Scale 2",
+    "WATER_00": "Caldaia",
+    "WATER_01": "Lavatrice",
+    "WATER_02": "Sottoscala",
+    "TAPP_05": "Portafinestre Camera Principale",
+    "TAPP_06": "Finestra Camera Principale",
+    "TAPP_07": "Finestra Camera",
+    "DOOR_01": "Portafinestra Cucina",
+    "DOOR_02": "Finestra Soggiorno"
+  },
+  "actions": {
+    "BUTT_00": {
+      "topic": [
+        "LAMP_00",
+        "GU10_00",
+        "GU10_01"
+      ],
+      "action": {
+        "single": {
+          "payload": "{\"state\":\"on\", \"brightness\":act_brightness, \"color_temp\":act_color_temp}"
+        },
+        "double": {
+          "payload": "{\"state\":\"off\"}"
+        },
+        "long": {
+          "payload": "TOGGLE"
+        }
+      }
+    },
+    "BUTT_01": {
+      "topic": [
+        "PLUG_00"
+      ],
+      "action": {
+        "single": {
+          "payload": "{\"state\":\"TOGGLE\"}"
+        },
+        "double": {
+          "payload": "{\"state\":\"Off\"}"
+        },
+        "triple": {
+          "payload": "triple"
+        }
+      }
+    },
+    "BUTT_02": {
+      "topic": [
+        "LAMP_00",
+        "GU10_00",
+        "GU10_01"
+      ],
+      "action": {
+        "single": {
+          "payload": "{\"state\":\"on\", \"brightness\":act_brightness, \"color_temp\":act_color_temp}"
+        },
+        "double": {
+          "payload": "{\"state\":\"off\"}"
+        },
+        "long": {
+          "payload": "TOGGLE"
+        }
+      }
+    },
+    "DIMM_00": {
+      "topic": [
+        "LAMP_00",
+        "GU10_00",
+        "GU10_01"
+      ],
+      "action": {
+        "on": {
+          "payload": "{\"state\":\"On\", \"brightness\":act_brightness, \"color_temp\":act_color_temp}"
+        },
+        "off": {
+          "payload": "{\"state\":\"Off\", \"brightness\":1,\"transition\":2}"
+        },
+        "brightness_move_up": {},
+        "brightness_move_down": {},
+        "brightness_stop": {}
+      }
+    },
+    "MOTT_00": {
+      "topic": [
+        "LAMP_00",
+        "GU10_00",
+        "GU10_01"
+      ],
+      "occupancy": {
+        "True": {
+          "payload": "{\"state\":\"On\", \"brightness\":act_brightness, \"color_temp\":act_color_temp}"
+        },
+        "False": {
+          "payload": "{\"state\":\"Off\", \"brightness\":1, \"transition\":5}"
+        }
+      }
+    },
+    "MOTT_01": {
+      "topic": [
+        "GU10_02"
+      ],
+      "occupancy": {
+        "True": {
+          "payload": "{\"state\":\"On\", \"brightness\":act_brightness, \"color_temp\":act_color_temp}",
+          "message": "🚶 {name} Movimento rilevato {location}."
+        },
+        "False": {
+          "payload": "{\"state\":\"Off\", \"brightness\":1, \"transition\":5}"
+        }
+      }
+    },
+    "WATER_00": {
+      "water_leak": {
+        "True": {
+          "action": "alert",
+          "message": "🚨 {name} ALLARME! Perdita acqua rilevata {location}."
+        }
+      }
+    },
+    "WATER_01": {
+      "water_leak": {
+        "True": {
+          "action": "alert",
+          "message": "🚨 {name} ALLARME! Perdita acqua rilevata {location}."
+        }
+      }
+    },
+    "WATER_02": {
+      "water_leak": {
+        "True": {
+          "action": "alert",
+          "message": "🚨 {name} ALLARME! Perdita acqua rilevata {location}."
+        }
+      }
+    }
+  },
+  "schedules": {
+    "job": {
+      "def": "job",
+      "repeat": 60,
+      "description": "Run job",
+      "topic": [
+        "GU10_00",
+        "GU10_01",
+        "GU10_02",
+        "LAMP_00"
+      ],
+      "payload": "{}"
+    },
+    "sch_000": {
+      "def": "Sun_rise",
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ],
+      "time": "07:00",
+      "duration": 10,
+      "description": "Sunrise wakeup light",
+      "topic": [
+        "GU10_02"
+      ],
+      "payload": "{ \"brightness\":act_brightness, \"transition\":600}"
+    },
+    "sch_001": {
+      "def": "Sun_rise",
+      "days": [
+        "sat",
+        "sun"
+      ],
+      "time": "07:50",
+      "duration": 10,
+      "description": "Sunrise wakeup light - weekends",
+      "topic": [
+        "GU10_02"
+      ],
+      "payload": "{ \"brightness\":act_brightness, \"transition\":600}"
+    },
+    "sch_002": {
+      "def": "run_schedule",
+      "time": "08:20",
+      "description": "Open blinds in the morning",
+      "topic": [
+        "TAPP_00",
+        "TAPP_01",
+        "TAPP_02",
+        "TAPP_03",
+        "TAPP_04",
+        "TAPP_05"
+      ],
+      "payload": "{\"state\":\"OPEN\"}",
+      "message": "☀️ Buongiorno! Apertura tende programmata."
+    },
+    "sch_003": {
+      "def": "run_schedule",
+      "time": "21:00",
+      "description": "Close blinds in the evening",
+      "topic": [
+        "TAPP_00",
+        "TAPP_01",
+        "TAPP_02",
+        "TAPP_03",
+        "TAPP_04",
+        "TAPP_05"
+      ],
+      "payload": "{\"state\":\"CLOSE\"}"
+    },
+    "sch_004": {
+      "def": "run_check_schedule",
+      "time": "00:00",
+      "repeat": 5,
+      "level": 20,
+      "check": "SENS_00",
+      "description": "Room heating",
+      "topic": [
+        "INTT_00"
+      ],
+      "action": {
+        "19": {
+          "payload": "{\"state\":\"On\"}"
+        },
+        "21": {
+          "payload": "{\"state\":\"Off\"}"
+        }
+      }
+    },
+    "sch_005": {
+      "def": "run_check_schedule",
+      "time": "00:00",
+      "repeat": 5,
+      "level": 20,
+      "check": "SENS_00",
+      "description": "Bathroom heating",
+      "topic": [
+        "INTT_01"
+      ],
+      "action": {
+        "19": {
+          "payload": "{\"state\":\"On\"}"
+        },
+        "21": {
+          "payload": "{\"state\":\"Off\"}"
+        }
+      }
+    },
+    "sch_006": {
+      "def": "Auto_Lux",
+      "repeat": 60,
+      "control": "MOTT_00",
+      "description": "Auto Lux Living",
+      "topic": [
+        "GU10_00",
+        "GU10_01",
+        "LAMP_00"
+      ],
+      "payload": "{}"
+    },
+    "Test": {
+      "def": "Test",
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat",
+        "sun"
+      ],
+      "time": "17:40",
+      "duration": 120,
+      "description": "TEST Sunrise wakeup light - weekends",
+      "topic": [
+        "GU10_02"
+      ],
+      "payload": "{ \"brightness\":act_brightness, \"transition\":240}"
+    }
+  },
+  "key_sql": [
+    "battery",
+    "action",
+    "state",
+    "position",
+    "contact",
+    "tamper",
+    "temperature",
+    "humidity",
+    "soil_moisture",
+    "illuminance",
+    "occupancy",
+    "water_leak",
+    "timestamp_a"
+  ],
+  "key_act": [
+    "auto",
+    "action",
+    "state",
+    "contact",
+    "tamper",
+    "occupancy",
+    "water_leak"
+  ],
+  "sensor_types": {
+    "14594": {
+      "vendor": "Wimar",
+      "icon": "🪟"
+    },
+    "E2134": {
+      "vendor": "IKEA",
+      "icon": "🕵️",
+      "auto_action": true
+    },
+    "E2201": {
+      "vendor": "IKEA",
+      "icon": "🆔️",
+      "auto_action": true
+    },
+    "E22x4": {
+      "vendor": "IKEA",
+      "icon": "🔌"
+    },
+    "LED2004G8": {
+      "vendor": "IKEA",
+      "icon": "💡"
+    },
+    "LED2005R5-LED2106R3": {
+      "vendor": "IKEA",
+      "icon": "💡"
+    },
+    "LED2107C4": {
+      "vendor": "IKEA",
+      "icon": "💡"
+    },
+    "SH-SC07": {
+      "vendor": "SONOFF",
+      "icon": "🔘",
+      "auto_action": true
+    },
+    "SNZB-01P": {
+      "vendor": "SONOFF",
+      "icon": "🔘",
+      "auto_action": true
+    },
+    "SNZB-02P": {
+      "vendor": "SONOFF",
+      "icon": "🌡",
+      "report_fields": [
+        "TEMPERATURE",
+        "HUMIDITY"
+      ]
+    },
+    "SNZB-04P": {
+      "vendor": "SONOFF",
+      "icon": "🚪",
+      "auto_action": true
+    },
+    "TS0201": {
+      "vendor": "TUYA",
+      "icon": "🌡",
+      "report_fields": [
+        "TEMPERATURE",
+        "HUMIDITY"
+      ]
+    },
+    "TH02Z": {
+      "vendor": "TUYA",
+      "icon": "🌡",
+      "report_fields": [
+        "TEMPERATURE",
+        "HUMIDITY"
+      ]
+    },
+    "TS0601_soil_3": {
+      "vendor": "TUYA",
+      "icon": "🚜",
+      "report_fields": [
+        "TEMPERATURE",
+        "SOIL_MOISTURE"
+      ]
+    },
+    "ZBMINIR2": {
+      "vendor": "SONOFF",
+      "icon": "🔘"
+    },
+    "ZG-222Z": {
+      "vendor": "HOBEIAN",
+      "icon": "💧",
+      "auto_action": true
+    },
+    "TS0601": {
+      "vendor": "TUYA",
+      "icon": "🔌",
+      "report_fields": [
+        "ENERGY_A",
+        "CURRENT_A"
+      ]
+    }
+  }
+}

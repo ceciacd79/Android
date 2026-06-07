@@ -1,0 +1,125 @@
+{
+    "theme": "SYSTEM",
+    "primary_color": "RED",
+    "secondary_color": "LIME",
+    "debug": false,
+    "mqtt_ip": "192.168.178.2",
+    "mqtt_port": 1883,
+    "pages_config": [
+        {
+            "id": 0,
+            "name": "Home",
+            "module": "home_page",
+            "icon": "HOME",
+            "selected_icon": "HOME_FILLED",
+            "visible": true
+        },
+        {
+            "id": 1,
+            "name": "Azioni",
+            "module": "actions_page",
+            "icon": "SETTINGS_OUTLINED",
+            "selected_icon": "PENDING_ACTIONS",
+            "visible": true
+        },
+        {
+            "id": 2,
+            "name": "Meteo",
+            "module": "meteo_page",
+            "icon": "WB_SUNNY_OUTLINED",
+            "selected_icon": "WB_SUNNY",
+            "visible": true
+        },
+        {
+            "id": 3,
+            "name": "Mqtt",
+            "module": "mqtt_page",
+            "icon": "SETTINGS_OUTLINED",
+            "selected_icon": "SETTINGS",
+            "visible": true
+        },
+        {
+            "id": 4,
+            "name": "Schedule",
+            "module": "schedule_page",
+            "icon": "PENDING_ACTIONS",
+            "selected_icon": "SCHEDULE",
+            "visible": true
+        },
+        {
+            "id": 5,
+            "name": "Chart",
+            "module": "chart_page",
+            "icon": "SHOW_CHART",
+            "selected_icon": "SHOW_CHART",
+            "visible": true
+        },
+        {
+            "id": 6,
+            "name": "DataBase",
+            "module": "database_page",
+            "icon": "DATA_OBJECT_SHARP",
+            "selected_icon": "DATA_OBJECT_SHARP",
+            "visible": true
+        },
+        {
+            "id": 7,
+            "name": "Settings",
+            "module": "settings_page",
+            "icon": "SETTINGS_OUTLINED",
+            "selected_icon": "SETTINGS",
+            "visible": true
+        },
+        {
+            "id": 8,
+            "name": "Calendario",
+            "module": "calend_page",
+            "icon": "CALENDAR_MONTH",
+            "selected_icon": "CALENDAR_MONTH",
+            "visible": true
+        },
+        {
+            "id": 9,
+            "name": "Log",
+            "module": "log_page",
+            "icon": "INFO_OUTLINE",
+            "selected_icon": "INFO",
+            "visible": true
+        }
+    ],
+    "key_sql": [
+        "temperature",
+        "humidity",
+        "illuminance",
+        "occupancy",
+        "soil_moisture"
+    ],
+    "key_act": [
+        "auto",
+        "action",
+        "contact",
+        "occupancy",
+        "battery",
+        "battery_low",
+        "state",
+        "tamper",
+        "water_leak",
+        "temperature",
+        "humidity",
+        "power_a"
+    ],
+    "key_rooms": [
+        "Living",
+        "Cucina",
+        "Bagno Principale",
+        "Bagno Servizio",
+        "Cantina",
+        "Camera Matrimoniale"
+    ],
+    "key_floor": [
+        "Primo",
+        "Secondo",
+        "Interrato"
+    ],
+    "last_updated": "2026-05-29 20:35:28"
+}

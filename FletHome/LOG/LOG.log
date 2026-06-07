@@ -1,0 +1,287 @@
+10:43:41.564: [INFO ], main     , <module>       , 1386: 🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎
+10:43:41.566: [INFO ], main     , <module>       , 1387: Start Application 'HomeZig Flet Application'.
+10:43:41.566: [INFO ], main     , <module>       , 1388: Author: Cechich Diego - Version: 0.2.0
+10:43:41.566: [INFO ], main     , <module>       , 1389: Flet v: 0.85.1
+10:43:41.579: [INFO ], info     , PC_Info        ,  135: 👔 Current user 'Cechich Diego'.
+10:43:41.580: [INFO ], info     , PC_Info        ,  136: 💻 Logic CPU 12, fisical core 6 , usable CPU 12.
+10:43:41.580: [INFO ], info     , PC_Info        ,  138: 💻 Current freq 4101.0, min 0.0 , max4101.0.
+10:43:41.581: [INFO ], info     , PC_Info        ,  140: 💻 Memory Total 15.9  Gb, Available 1.2   Gb,  92.7 %.
+10:43:41.582: [INFO ], info     , PC_Info        ,  146: 💻 Partition C:\ type NTFS, total 464.9 Gb, used 442.8 Gb, free 22.0 Gb,  95.3 %.
+10:43:41.582: [INFO ], info     , PC_Info        ,  146: 💻 Partition D:\ type NTFS, total 931.5 Gb, used 841.5 Gb, free 90.0 Gb,  90.3 %.
+10:43:41.607: [INFO ], info     , PC_Info        ,  170: Ethernet                              , MAC 2C-F0-5D-D7-B9-F1, IP4 169.254.106.146, SubNet 255.255.0.0    , isUp 0 .
+10:43:41.607: [INFO ], info     , PC_Info        ,  170: VirtualBox Host-Only Network          , MAC 0A-00-27-00-00-11, IP4 192.168.56.1   , SubNet 255.255.255.0  , isUp 1 .
+10:43:41.607: [INFO ], info     , PC_Info        ,  170: Ethernet 4                            , MAC 0C-37-96-AD-E4-0C, IP4 169.254.103.255, SubNet 255.255.0.0    , isUp 0 .
+10:43:41.608: [INFO ], info     , PC_Info        ,  170: Connessione alla rete locale (LAN)* 9 , MAC 62-E3-27-20-DB-12, IP4 169.254.136.75 , SubNet 255.255.0.0    , isUp 0 .
+10:43:41.608: [INFO ], info     , PC_Info        ,  170: Connessione alla rete locale (LAN)* 10, MAC 60-E3-27-20-DB-12, IP4 169.254.212.38 , SubNet 255.255.0.0    , isUp 0 .
+10:43:41.608: [INFO ], info     , PC_Info        ,  170: Ethernet 2                            , MAC 00-09-0F-FE-00-01, IP4 169.254.210.254, SubNet 255.255.0.0    , isUp 0 .
+10:43:41.608: [INFO ], info     , PC_Info        ,  170: Wi-Fi                                 , MAC 60-E3-27-20-DB-12, IP4 192.168.178.131, SubNet 255.255.255.0  , isUp 1 .
+10:43:41.608: [INFO ], info     , PC_Info        ,  170: vEthernet (Default Switch)            , MAC 00-15-5D-90-9C-4E, IP4 192.168.240.1  , SubNet 255.255.240.0  , isUp 1 .
+10:43:41.608: [INFO ], info     , PC_Info        ,  170: vEthernet (WSL (Hyper-V firewall))    , MAC 00-15-5D-9B-29-32, IP4 172.27.208.1   , SubNet 255.255.240.0  , isUp 1 .
+10:43:41.608: [INFO ], info     , PC_Info        ,  170: Tailscale                             , MAC                  , IP4 100.124.245.17 , SubNet 255.255.255.255, isUp 1 .
+10:43:41.608: [INFO ], info     , PC_Info        ,  170: Loopback Pseudo-Interface 1           , MAC                  , IP4 127.0.0.1      , SubNet 255.0.0.0      , isUp 1 .
+10:43:41.609: [INFO ], info     , PC_Info        ,  174: 🔌 Only power supplie.
+10:43:41.609: [INFO ], info     , PC_Info        ,  178: Boot Time 2026-06-06 08:29:44.
+10:43:41.609: [INFO ], main     , <module>       , 1398: 💻 Running on LOCAL HOST (Test Mode)
+10:43:41.989: [INFO ], home     , __init__       ,  225: 🚀 SQLAlchemy Engine inizializzato correttamente in home.py!
+10:43:41.990: [INFO ], main     , <module>       , 1408: 🌐 Avvio app HTTP su http://192.168.178.131:8550
+10:43:45.363: [INFO ], flet_static_files, __init__       ,   85: Web renderer configured: WebRenderer.AUTO
+10:43:45.363: [INFO ], flet_static_files, __init__       ,   86: Route URL strategy configured: RouteUrlStrategy.PATH
+10:43:45.363: [INFO ], flet_static_files, __init__       ,   87: No CDN configured: False
+10:43:45.750: [INFO ], flet_app_manager, start          ,   69: Starting up Flet App Manager
+10:43:57.935: [INFO ], flet_static_files, __config       ,  143: Temp dir created for patched index and manifest: C:\Users\CECHIC~1\AppData\Local\Temp\tmpjt9sqm65
+10:43:57.937: [INFO ], flet_static_files, __config       ,  147: Web root: d:\GIT\Project\.flet\Lib\site-packages\flet_web\web
+10:43:57.937: [INFO ], flet_static_files, __config       ,  161: Assets dir: D:\GIT\Project\HomeNew\Flet\assets
+10:43:58.515: [INFO ], flet_app , __init__       ,   77: New FletApp: LmX5K4gi
+10:43:58.619: [INFO ], flet_app_manager, add_session    ,  111: New session created (1 total): _I3txDRSBQrfemK2N_6eee2841374f629b9a70ecf6eac5bfc539981e62
+10:43:58.636: [INFO ], flet_app , __on_session_created,  150: Start session: I3txDRSBQrfemK2N
+10:43:58.637: [INFO ], main     , main           , 1039: 🌐 Nuova connessione client:
+10:43:58.637: [INFO ], main     , main           , 1040:   └─ Platform: PagePlatform.WINDOWS
+10:43:58.637: [INFO ], main     , main           , 1041:   └─ User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
+10:43:58.637: [INFO ], main     , main           , 1042:   └─ Session ID: I3txDRSBQrfemK2N
+10:43:58.638: [INFO ], main     , main           , 1044:   └─ IP Client: 192.168.178.131
+10:43:58.638: [INFO ], main     , main           , 1083:   └─ Browser: Chrome
+10:43:58.638: [INFO ], main     , main           , 1084:   └─ OS: Windows 10/11
+10:43:58.638: [INFO ], main     , main           , 1085:   └─ Full UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
+10:43:58.707: [INFO ], main     , Set_settings   ,  747: 🐛 Debug mode: False
+10:43:59.549: [INFO ], main     , __init__       ,  387: 💻 Running on LOCAL HOST (Test Mode)
+10:43:59.549: [INFO ], mqtt_cust, mqtt_cl_ok     ,   81: Creo nuovo client MQTT per broker=192.168.178.150, port=1883, user=mqtt
+10:44:02.475: [INFO ], main     , on_session_open,  561: Sessione Flet aperta. Sessioni attive: 1
+10:44:03.051: [INFO ], main     , main           , 1336: 🚴 App started successfully.
+10:46:53.305: [INFO ], main     , <module>       , 1386: 🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎
+10:46:53.306: [INFO ], main     , <module>       , 1387: Start Application 'HomeZig Flet Application'.
+10:46:53.306: [INFO ], main     , <module>       , 1388: Author: Cechich Diego - Version: 0.2.0
+10:46:53.306: [INFO ], main     , <module>       , 1389: Flet v: 0.85.1
+10:46:53.318: [INFO ], info     , PC_Info        ,  135: 👔 Current user 'Cechich Diego'.
+10:46:53.319: [INFO ], info     , PC_Info        ,  136: 💻 Logic CPU 12, fisical core 6 , usable CPU 12.
+10:46:53.319: [INFO ], info     , PC_Info        ,  138: 💻 Current freq 4101.0, min 0.0 , max4101.0.
+10:46:53.319: [INFO ], info     , PC_Info        ,  140: 💻 Memory Total 15.9  Gb, Available 1.8   Gb,  88.4 %.
+10:46:53.320: [INFO ], info     , PC_Info        ,  146: 💻 Partition C:\ type NTFS, total 464.9 Gb, used 442.9 Gb, free 22.0 Gb,  95.3 %.
+10:46:53.320: [INFO ], info     , PC_Info        ,  146: 💻 Partition D:\ type NTFS, total 931.5 Gb, used 841.5 Gb, free 90.0 Gb,  90.3 %.
+10:46:53.350: [INFO ], info     , PC_Info        ,  170: Ethernet                              , MAC 2C-F0-5D-D7-B9-F1, IP4 169.254.106.146, SubNet 255.255.0.0    , isUp 0 .
+10:46:53.350: [INFO ], info     , PC_Info        ,  170: VirtualBox Host-Only Network          , MAC 0A-00-27-00-00-11, IP4 192.168.56.1   , SubNet 255.255.255.0  , isUp 1 .
+10:46:53.351: [INFO ], info     , PC_Info        ,  170: Ethernet 4                            , MAC 0C-37-96-AD-E4-0C, IP4 169.254.103.255, SubNet 255.255.0.0    , isUp 0 .
+10:46:53.351: [INFO ], info     , PC_Info        ,  170: Connessione alla rete locale (LAN)* 9 , MAC 62-E3-27-20-DB-12, IP4 169.254.136.75 , SubNet 255.255.0.0    , isUp 0 .
+10:46:53.351: [INFO ], info     , PC_Info        ,  170: Connessione alla rete locale (LAN)* 10, MAC 60-E3-27-20-DB-12, IP4 169.254.212.38 , SubNet 255.255.0.0    , isUp 0 .
+10:46:53.351: [INFO ], info     , PC_Info        ,  170: Ethernet 2                            , MAC 00-09-0F-FE-00-01, IP4 169.254.210.254, SubNet 255.255.0.0    , isUp 0 .
+10:46:53.351: [INFO ], info     , PC_Info        ,  170: Wi-Fi                                 , MAC 60-E3-27-20-DB-12, IP4 192.168.178.131, SubNet 255.255.255.0  , isUp 1 .
+10:46:53.351: [INFO ], info     , PC_Info        ,  170: vEthernet (Default Switch)            , MAC 00-15-5D-90-9C-4E, IP4 192.168.240.1  , SubNet 255.255.240.0  , isUp 1 .
+10:46:53.351: [INFO ], info     , PC_Info        ,  170: vEthernet (WSL (Hyper-V firewall))    , MAC 00-15-5D-9B-29-32, IP4 172.27.208.1   , SubNet 255.255.240.0  , isUp 1 .
+10:46:53.351: [INFO ], info     , PC_Info        ,  170: Tailscale                             , MAC                  , IP4 100.124.245.17 , SubNet 255.255.255.255, isUp 1 .
+10:46:53.352: [INFO ], info     , PC_Info        ,  170: Loopback Pseudo-Interface 1           , MAC                  , IP4 127.0.0.1      , SubNet 255.0.0.0      , isUp 1 .
+10:46:53.352: [INFO ], info     , PC_Info        ,  174: 🔌 Only power supplie.
+10:46:53.352: [INFO ], info     , PC_Info        ,  178: Boot Time 2026-06-06 08:29:44.
+10:46:53.352: [INFO ], main     , <module>       , 1398: 💻 Running on LOCAL HOST (Test Mode)
+10:46:53.412: [INFO ], home     , __init__       ,  225: 🚀 SQLAlchemy Engine inizializzato correttamente in home.py!
+10:46:53.412: [INFO ], main     , <module>       , 1408: 🌐 Avvio app HTTP su http://192.168.178.131:8550
+10:46:54.845: [INFO ], flet_static_files, __init__       ,   85: Web renderer configured: WebRenderer.AUTO
+10:46:54.846: [INFO ], flet_static_files, __init__       ,   86: Route URL strategy configured: RouteUrlStrategy.PATH
+10:46:54.846: [INFO ], flet_static_files, __init__       ,   87: No CDN configured: False
+10:46:54.944: [INFO ], flet_app_manager, start          ,   69: Starting up Flet App Manager
+10:47:07.466: [INFO ], flet_static_files, __config       ,  143: Temp dir created for patched index and manifest: C:\Users\CECHIC~1\AppData\Local\Temp\tmp066h8flp
+10:47:07.467: [INFO ], flet_static_files, __config       ,  147: Web root: d:\GIT\Project\.flet\Lib\site-packages\flet_web\web
+10:47:07.467: [INFO ], flet_static_files, __config       ,  161: Assets dir: D:\GIT\Project\HomeNew\Flet\assets
+10:47:07.878: [INFO ], flet_app , __init__       ,   77: New FletApp: 2mLnFymc
+10:47:07.954: [INFO ], flet_app_manager, add_session    ,  111: New session created (1 total): _6AyrV884IYKoa9eA_6eee2841374f629b9a70ecf6eac5bfc539981e62
+10:47:07.969: [INFO ], flet_app , __on_session_created,  150: Start session: 6AyrV884IYKoa9eA
+10:47:07.969: [INFO ], main     , main           , 1039: 🌐 Nuova connessione client:
+10:47:07.969: [INFO ], main     , main           , 1040:   └─ Platform: PagePlatform.WINDOWS
+10:47:07.970: [INFO ], main     , main           , 1041:   └─ User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
+10:47:07.970: [INFO ], main     , main           , 1042:   └─ Session ID: 6AyrV884IYKoa9eA
+10:47:07.970: [INFO ], main     , main           , 1044:   └─ IP Client: 192.168.178.131
+10:47:07.970: [INFO ], main     , main           , 1083:   └─ Browser: Chrome
+10:47:07.970: [INFO ], main     , main           , 1084:   └─ OS: Windows 10/11
+10:47:07.970: [INFO ], main     , main           , 1085:   └─ Full UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
+10:47:08.023: [INFO ], main     , Set_settings   ,  747: 🐛 Debug mode: False
+10:47:08.668: [INFO ], main     , __init__       ,  387: 💻 Running on LOCAL HOST (Test Mode)
+10:47:08.668: [INFO ], mqtt_cust, mqtt_cl_ok     ,   81: Creo nuovo client MQTT per broker=192.168.178.150, port=1883, user=mqtt
+10:47:11.906: [INFO ], main     , on_session_open,  561: Sessione Flet aperta. Sessioni attive: 1
+10:47:12.184: [INFO ], main     , main           , 1336: 🚴 App started successfully.
+10:48:42.270: [WARNING], mqtt_cust, mqtt_on_disconnect,  152: [MQTT] Disconnesso dal broker, rc=7, userdata=None, properties=None
+10:48:42.570: [INFO ], mqtt_cust, mqtt_on_disconnect,  168: Tentativo di riconnessione 1/5...
+10:50:08.757: [INFO ], main     , <module>       , 1386: 🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎
+10:50:08.758: [INFO ], main     , <module>       , 1387: Start Application 'HomeZig Flet Application'.
+10:50:08.758: [INFO ], main     , <module>       , 1388: Author: Cechich Diego - Version: 0.2.0
+10:50:08.758: [INFO ], main     , <module>       , 1389: Flet v: 0.85.1
+10:50:08.770: [INFO ], info     , PC_Info        ,  135: 👔 Current user 'Cechich Diego'.
+10:50:08.771: [INFO ], info     , PC_Info        ,  136: 💻 Logic CPU 12, fisical core 6 , usable CPU 12.
+10:50:08.771: [INFO ], info     , PC_Info        ,  138: 💻 Current freq 4101.0, min 0.0 , max4101.0.
+10:50:08.771: [INFO ], info     , PC_Info        ,  140: 💻 Memory Total 15.9  Gb, Available 3.3   Gb,  79.0 %.
+10:50:08.772: [INFO ], info     , PC_Info        ,  146: 💻 Partition C:\ type NTFS, total 464.9 Gb, used 442.9 Gb, free 21.9 Gb,  95.3 %.
+10:50:08.772: [INFO ], info     , PC_Info        ,  146: 💻 Partition D:\ type NTFS, total 931.5 Gb, used 841.5 Gb, free 90.0 Gb,  90.3 %.
+10:50:08.797: [INFO ], info     , PC_Info        ,  170: Ethernet                              , MAC 2C-F0-5D-D7-B9-F1, IP4 169.254.106.146, SubNet 255.255.0.0    , isUp 0 .
+10:50:08.797: [INFO ], info     , PC_Info        ,  170: VirtualBox Host-Only Network          , MAC 0A-00-27-00-00-11, IP4 192.168.56.1   , SubNet 255.255.255.0  , isUp 1 .
+10:50:08.797: [INFO ], info     , PC_Info        ,  170: Ethernet 4                            , MAC 0C-37-96-AD-E4-0C, IP4 169.254.103.255, SubNet 255.255.0.0    , isUp 0 .
+10:50:08.797: [INFO ], info     , PC_Info        ,  170: Connessione alla rete locale (LAN)* 9 , MAC 62-E3-27-20-DB-12, IP4 169.254.136.75 , SubNet 255.255.0.0    , isUp 0 .
+10:50:08.797: [INFO ], info     , PC_Info        ,  170: Connessione alla rete locale (LAN)* 10, MAC 60-E3-27-20-DB-12, IP4 169.254.212.38 , SubNet 255.255.0.0    , isUp 0 .
+10:50:08.797: [INFO ], info     , PC_Info        ,  170: Ethernet 2                            , MAC 00-09-0F-FE-00-01, IP4 169.254.210.254, SubNet 255.255.0.0    , isUp 0 .
+10:50:08.798: [INFO ], info     , PC_Info        ,  170: Wi-Fi                                 , MAC 60-E3-27-20-DB-12, IP4 192.168.178.131, SubNet 255.255.255.0  , isUp 1 .
+10:50:08.798: [INFO ], info     , PC_Info        ,  170: vEthernet (Default Switch)            , MAC 00-15-5D-90-9C-4E, IP4 192.168.240.1  , SubNet 255.255.240.0  , isUp 1 .
+10:50:08.798: [INFO ], info     , PC_Info        ,  170: vEthernet (WSL (Hyper-V firewall))    , MAC 00-15-5D-9B-29-32, IP4 172.27.208.1   , SubNet 255.255.240.0  , isUp 1 .
+10:50:08.798: [INFO ], info     , PC_Info        ,  170: Tailscale                             , MAC                  , IP4 100.124.245.17 , SubNet 255.255.255.255, isUp 1 .
+10:50:08.798: [INFO ], info     , PC_Info        ,  170: Loopback Pseudo-Interface 1           , MAC                  , IP4 127.0.0.1      , SubNet 255.0.0.0      , isUp 1 .
+10:50:08.799: [INFO ], info     , PC_Info        ,  174: 🔌 Only power supplie.
+10:50:08.799: [INFO ], info     , PC_Info        ,  178: Boot Time 2026-06-06 08:29:44.
+10:50:08.799: [INFO ], main     , <module>       , 1398: 💻 Running on LOCAL HOST (Test Mode)
+10:50:08.857: [INFO ], home     , __init__       ,  225: 🚀 SQLAlchemy Engine inizializzato correttamente in home.py!
+10:50:08.857: [INFO ], main     , <module>       , 1408: 🌐 Avvio app HTTP su http://192.168.178.131:8550
+10:50:10.221: [INFO ], flet_static_files, __init__       ,   85: Web renderer configured: WebRenderer.AUTO
+10:50:10.221: [INFO ], flet_static_files, __init__       ,   86: Route URL strategy configured: RouteUrlStrategy.PATH
+10:50:10.221: [INFO ], flet_static_files, __init__       ,   87: No CDN configured: False
+10:50:10.310: [INFO ], flet_app_manager, start          ,   69: Starting up Flet App Manager
+10:50:14.034: [INFO ], flet_app , __init__       ,   77: New FletApp: q2bZnxsD
+10:50:14.042: [INFO ], flet_app_manager, add_session    ,  111: New session created (1 total): _646ize9vvoIDOWXu_6eee2841374f629b9a70ecf6eac5bfc539981e62
+10:50:14.055: [INFO ], flet_app , __on_session_created,  150: Start session: 646ize9vvoIDOWXu
+10:50:14.055: [INFO ], main     , main           , 1039: 🌐 Nuova connessione client:
+10:50:14.055: [INFO ], main     , main           , 1040:   └─ Platform: PagePlatform.WINDOWS
+10:50:14.055: [INFO ], main     , main           , 1041:   └─ User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
+10:50:14.056: [INFO ], main     , main           , 1042:   └─ Session ID: 646ize9vvoIDOWXu
+10:50:14.056: [INFO ], main     , main           , 1044:   └─ IP Client: 192.168.178.131
+10:50:14.056: [INFO ], main     , main           , 1083:   └─ Browser: Chrome
+10:50:14.056: [INFO ], main     , main           , 1084:   └─ OS: Windows 10/11
+10:50:14.056: [INFO ], main     , main           , 1085:   └─ Full UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
+10:50:14.116: [INFO ], main     , Set_settings   ,  747: 🐛 Debug mode: False
+10:50:14.900: [INFO ], main     , __init__       ,  387: 💻 Running on LOCAL HOST (Test Mode)
+10:50:14.900: [INFO ], mqtt_cust, mqtt_cl_ok     ,   81: Creo nuovo client MQTT per broker=192.168.178.150, port=1883, user=mqtt
+10:50:17.461: [INFO ], main     , on_session_open,  561: Sessione Flet aperta. Sessioni attive: 1
+10:50:17.725: [INFO ], main     , main           , 1336: 🚴 App started successfully.
+12:01:27.673: [INFO ], main     , <module>       , 1386: 🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎
+12:01:27.674: [INFO ], main     , <module>       , 1387: Start Application 'HomeZig Flet Application'.
+12:01:27.674: [INFO ], main     , <module>       , 1388: Author: Cechich Diego - Version: 0.2.0
+12:01:27.674: [INFO ], main     , <module>       , 1389: Flet v: 0.85.1
+12:01:27.685: [INFO ], info     , PC_Info        ,  135: 👔 Current user 'Cechich Diego'.
+12:01:27.686: [INFO ], info     , PC_Info        ,  136: 💻 Logic CPU 12, fisical core 6 , usable CPU 12.
+12:01:27.686: [INFO ], info     , PC_Info        ,  138: 💻 Current freq 4101.0, min 0.0 , max4101.0.
+12:01:27.687: [INFO ], info     , PC_Info        ,  140: 💻 Memory Total 15.9  Gb, Available 4.6   Gb,  71.3 %.
+12:01:27.687: [INFO ], info     , PC_Info        ,  146: 💻 Partition C:\ type NTFS, total 464.9 Gb, used 442.9 Gb, free 22.0 Gb,  95.3 %.
+12:01:27.688: [INFO ], info     , PC_Info        ,  146: 💻 Partition D:\ type NTFS, total 931.5 Gb, used 841.5 Gb, free 90.0 Gb,  90.3 %.
+12:01:27.713: [INFO ], info     , PC_Info        ,  170: Ethernet                              , MAC 2C-F0-5D-D7-B9-F1, IP4 169.254.106.146, SubNet 255.255.0.0    , isUp 0 .
+12:01:27.713: [INFO ], info     , PC_Info        ,  170: VirtualBox Host-Only Network          , MAC 0A-00-27-00-00-11, IP4 192.168.56.1   , SubNet 255.255.255.0  , isUp 1 .
+12:01:27.713: [INFO ], info     , PC_Info        ,  170: Ethernet 4                            , MAC 0C-37-96-AD-E4-0C, IP4 169.254.103.255, SubNet 255.255.0.0    , isUp 0 .
+12:01:27.713: [INFO ], info     , PC_Info        ,  170: Connessione alla rete locale (LAN)* 9 , MAC 62-E3-27-20-DB-12, IP4 169.254.136.75 , SubNet 255.255.0.0    , isUp 0 .
+12:01:27.713: [INFO ], info     , PC_Info        ,  170: Connessione alla rete locale (LAN)* 10, MAC 60-E3-27-20-DB-12, IP4 169.254.212.38 , SubNet 255.255.0.0    , isUp 0 .
+12:01:27.713: [INFO ], info     , PC_Info        ,  170: Ethernet 2                            , MAC 00-09-0F-FE-00-01, IP4 169.254.210.254, SubNet 255.255.0.0    , isUp 0 .
+12:01:27.714: [INFO ], info     , PC_Info        ,  170: Wi-Fi                                 , MAC 60-E3-27-20-DB-12, IP4 192.168.178.131, SubNet 255.255.255.0  , isUp 1 .
+12:01:27.714: [INFO ], info     , PC_Info        ,  170: vEthernet (Default Switch)            , MAC 00-15-5D-90-9C-4E, IP4 192.168.240.1  , SubNet 255.255.240.0  , isUp 1 .
+12:01:27.714: [INFO ], info     , PC_Info        ,  170: vEthernet (WSL (Hyper-V firewall))    , MAC 00-15-5D-9B-29-32, IP4 172.27.208.1   , SubNet 255.255.240.0  , isUp 1 .
+12:01:27.714: [INFO ], info     , PC_Info        ,  170: Tailscale                             , MAC                  , IP4 100.124.245.17 , SubNet 255.255.255.255, isUp 1 .
+12:01:27.714: [INFO ], info     , PC_Info        ,  170: Loopback Pseudo-Interface 1           , MAC                  , IP4 127.0.0.1      , SubNet 255.0.0.0      , isUp 1 .
+12:01:27.714: [INFO ], info     , PC_Info        ,  174: 🔌 Only power supplie.
+12:01:27.714: [INFO ], info     , PC_Info        ,  178: Boot Time 2026-06-06 08:29:44.
+12:01:27.715: [INFO ], main     , <module>       , 1398: 💻 Running on LOCAL HOST (Test Mode)
+12:01:27.771: [INFO ], home     , __init__       ,  227: 🚀 SQLAlchemy Engine inizializzato correttamente in home.py!
+12:01:27.771: [INFO ], main     , <module>       , 1408: 🌐 Avvio app HTTP su http://192.168.178.131:8550
+12:01:29.258: [INFO ], flet_static_files, __init__       ,   85: Web renderer configured: WebRenderer.AUTO
+12:01:29.259: [INFO ], flet_static_files, __init__       ,   86: Route URL strategy configured: RouteUrlStrategy.PATH
+12:01:29.259: [INFO ], flet_static_files, __init__       ,   87: No CDN configured: False
+12:01:29.405: [INFO ], flet_app_manager, start          ,   69: Starting up Flet App Manager
+12:01:38.285: [INFO ], flet_static_files, __config       ,  143: Temp dir created for patched index and manifest: C:\Users\CECHIC~1\AppData\Local\Temp\tmpr9mlikit
+12:01:38.285: [INFO ], flet_static_files, __config       ,  147: Web root: d:\GIT\Project\.flet\Lib\site-packages\flet_web\web
+12:01:38.286: [INFO ], flet_static_files, __config       ,  161: Assets dir: D:\GIT\Project\HomeNew\Flet\assets
+12:01:38.827: [INFO ], flet_app , __init__       ,   77: New FletApp: M1tQLod5
+12:01:38.883: [INFO ], flet_app_manager, add_session    ,  111: New session created (1 total): _SMyVJQk4lGWkw36g_6eee2841374f629b9a70ecf6eac5bfc539981e62
+12:01:38.896: [INFO ], flet_app , __on_session_created,  150: Start session: SMyVJQk4lGWkw36g
+12:01:38.897: [INFO ], main     , main           , 1039: 🌐 Nuova connessione client:
+12:01:38.897: [INFO ], main     , main           , 1040:   └─ Platform: PagePlatform.WINDOWS
+12:01:38.898: [INFO ], main     , main           , 1041:   └─ User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
+12:01:38.898: [INFO ], main     , main           , 1042:   └─ Session ID: SMyVJQk4lGWkw36g
+12:01:38.899: [INFO ], main     , main           , 1044:   └─ IP Client: 192.168.178.131
+12:01:38.899: [INFO ], main     , main           , 1083:   └─ Browser: Chrome
+12:01:38.899: [INFO ], main     , main           , 1084:   └─ OS: Windows 10/11
+12:01:38.899: [INFO ], main     , main           , 1085:   └─ Full UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
+12:01:38.948: [INFO ], main     , Set_settings   ,  747: 🐛 Debug mode: False
+12:01:39.714: [INFO ], main     , __init__       ,  387: 💻 Running on LOCAL HOST (Test Mode)
+12:01:39.714: [INFO ], mqtt_cust, mqtt_cl_ok     ,   81: Creo nuovo client MQTT per broker=192.168.178.150, port=1883, user=mqtt
+12:01:42.596: [INFO ], main     , on_session_open,  561: Sessione Flet aperta. Sessioni attive: 1
+12:01:42.922: [INFO ], main     , main           , 1336: 🚴 App started successfully.
+12:08:52.390: [INFO ], main     , <module>       , 1386: 🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎
+12:08:52.390: [INFO ], main     , <module>       , 1387: Start Application 'HomeZig Flet Application'.
+12:08:52.390: [INFO ], main     , <module>       , 1388: Author: Cechich Diego - Version: 0.2.0
+12:08:52.391: [INFO ], main     , <module>       , 1389: Flet v: 0.85.1
+12:08:52.406: [INFO ], info     , PC_Info        ,  135: 👔 Current user 'Cechich Diego'.
+12:08:52.407: [INFO ], info     , PC_Info        ,  136: 💻 Logic CPU 12, fisical core 6 , usable CPU 12.
+12:08:52.408: [INFO ], info     , PC_Info        ,  138: 💻 Current freq 4101.0, min 0.0 , max4101.0.
+12:08:52.409: [INFO ], info     , PC_Info        ,  140: 💻 Memory Total 15.9  Gb, Available 3.7   Gb,  76.5 %.
+12:08:52.409: [INFO ], info     , PC_Info        ,  146: 💻 Partition C:\ type NTFS, total 464.9 Gb, used 442.9 Gb, free 22.0 Gb,  95.3 %.
+12:08:52.410: [INFO ], info     , PC_Info        ,  146: 💻 Partition D:\ type NTFS, total 931.5 Gb, used 841.5 Gb, free 90.0 Gb,  90.3 %.
+12:08:52.438: [INFO ], info     , PC_Info        ,  170: Ethernet                              , MAC 2C-F0-5D-D7-B9-F1, IP4 169.254.106.146, SubNet 255.255.0.0    , isUp 0 .
+12:08:52.438: [INFO ], info     , PC_Info        ,  170: VirtualBox Host-Only Network          , MAC 0A-00-27-00-00-11, IP4 192.168.56.1   , SubNet 255.255.255.0  , isUp 1 .
+12:08:52.438: [INFO ], info     , PC_Info        ,  170: Ethernet 4                            , MAC 0C-37-96-AD-E4-0C, IP4 169.254.103.255, SubNet 255.255.0.0    , isUp 0 .
+12:08:52.438: [INFO ], info     , PC_Info        ,  170: Connessione alla rete locale (LAN)* 9 , MAC 62-E3-27-20-DB-12, IP4 169.254.136.75 , SubNet 255.255.0.0    , isUp 0 .
+12:08:52.438: [INFO ], info     , PC_Info        ,  170: Connessione alla rete locale (LAN)* 10, MAC 60-E3-27-20-DB-12, IP4 169.254.212.38 , SubNet 255.255.0.0    , isUp 0 .
+12:08:52.438: [INFO ], info     , PC_Info        ,  170: Ethernet 2                            , MAC 00-09-0F-FE-00-01, IP4 169.254.210.254, SubNet 255.255.0.0    , isUp 0 .
+12:08:52.439: [INFO ], info     , PC_Info        ,  170: Wi-Fi                                 , MAC 60-E3-27-20-DB-12, IP4 192.168.178.131, SubNet 255.255.255.0  , isUp 1 .
+12:08:52.439: [INFO ], info     , PC_Info        ,  170: vEthernet (Default Switch)            , MAC 00-15-5D-90-9C-4E, IP4 192.168.240.1  , SubNet 255.255.240.0  , isUp 1 .
+12:08:52.439: [INFO ], info     , PC_Info        ,  170: vEthernet (WSL (Hyper-V firewall))    , MAC 00-15-5D-9B-29-32, IP4 172.27.208.1   , SubNet 255.255.240.0  , isUp 1 .
+12:08:52.439: [INFO ], info     , PC_Info        ,  170: Tailscale                             , MAC                  , IP4 100.124.245.17 , SubNet 255.255.255.255, isUp 1 .
+12:08:52.439: [INFO ], info     , PC_Info        ,  170: Loopback Pseudo-Interface 1           , MAC                  , IP4 127.0.0.1      , SubNet 255.0.0.0      , isUp 1 .
+12:08:52.439: [INFO ], info     , PC_Info        ,  174: 🔌 Only power supplie.
+12:08:52.440: [INFO ], info     , PC_Info        ,  178: Boot Time 2026-06-06 08:29:44.
+12:08:52.440: [INFO ], main     , <module>       , 1398: 💻 Running on LOCAL HOST (Test Mode)
+12:08:52.502: [INFO ], home     , __init__       ,  227: 🚀 SQLAlchemy Engine inizializzato correttamente in home.py!
+12:08:52.502: [INFO ], main     , <module>       , 1408: 🌐 Avvio app HTTP su http://192.168.178.131:8550
+12:08:53.951: [INFO ], flet_static_files, __init__       ,   85: Web renderer configured: WebRenderer.AUTO
+12:08:53.951: [INFO ], flet_static_files, __init__       ,   86: Route URL strategy configured: RouteUrlStrategy.PATH
+12:08:53.952: [INFO ], flet_static_files, __init__       ,   87: No CDN configured: False
+12:08:54.043: [INFO ], flet_app_manager, start          ,   69: Starting up Flet App Manager
+12:08:54.539: [INFO ], flet_app , __init__       ,   77: New FletApp: XpG2SDqR
+12:08:54.545: [INFO ], flet_app_manager, add_session    ,  111: New session created (1 total): _vvAIL0PtgOVD2sqS_6eee2841374f629b9a70ecf6eac5bfc539981e62
+12:08:54.554: [INFO ], flet_app , __on_session_created,  150: Start session: vvAIL0PtgOVD2sqS
+12:08:54.554: [INFO ], main     , main           , 1039: 🌐 Nuova connessione client:
+12:08:54.555: [INFO ], main     , main           , 1040:   └─ Platform: PagePlatform.WINDOWS
+12:08:54.555: [INFO ], main     , main           , 1041:   └─ User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
+12:08:54.555: [INFO ], main     , main           , 1042:   └─ Session ID: vvAIL0PtgOVD2sqS
+12:08:54.555: [INFO ], main     , main           , 1044:   └─ IP Client: 192.168.178.131
+12:08:54.555: [INFO ], main     , main           , 1083:   └─ Browser: Chrome
+12:08:54.555: [INFO ], main     , main           , 1084:   └─ OS: Windows 10/11
+12:08:54.555: [INFO ], main     , main           , 1085:   └─ Full UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
+12:08:54.594: [INFO ], main     , Set_settings   ,  747: 🐛 Debug mode: False
+12:08:55.345: [INFO ], main     , __init__       ,  387: 💻 Running on LOCAL HOST (Test Mode)
+12:08:55.345: [INFO ], mqtt_cust, mqtt_cl_ok     ,   81: Creo nuovo client MQTT per broker=192.168.178.150, port=1883, user=mqtt
+12:08:58.341: [INFO ], main     , on_session_open,  561: Sessione Flet aperta. Sessioni attive: 1
+12:08:58.599: [INFO ], main     , main           , 1336: 🚴 App started successfully.
+12:12:43.467: [INFO ], main     , <module>       , 1386: 🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎🏎
+12:12:43.468: [INFO ], main     , <module>       , 1387: Start Application 'HomeZig Flet Application'.
+12:12:43.468: [INFO ], main     , <module>       , 1388: Author: Cechich Diego - Version: 0.2.0
+12:12:43.468: [INFO ], main     , <module>       , 1389: Flet v: 0.85.1
+12:12:43.480: [INFO ], info     , PC_Info        ,  135: 👔 Current user 'Cechich Diego'.
+12:12:43.480: [INFO ], info     , PC_Info        ,  136: 💻 Logic CPU 12, fisical core 6 , usable CPU 12.
+12:12:43.480: [INFO ], info     , PC_Info        ,  138: 💻 Current freq 4101.0, min 0.0 , max4101.0.
+12:12:43.481: [INFO ], info     , PC_Info        ,  140: 💻 Memory Total 15.9  Gb, Available 3.8   Gb,  76.2 %.
+12:12:43.481: [INFO ], info     , PC_Info        ,  146: 💻 Partition C:\ type NTFS, total 464.9 Gb, used 442.9 Gb, free 22.0 Gb,  95.3 %.
+12:12:43.481: [INFO ], info     , PC_Info        ,  146: 💻 Partition D:\ type NTFS, total 931.5 Gb, used 841.5 Gb, free 90.0 Gb,  90.3 %.
+12:12:43.509: [INFO ], info     , PC_Info        ,  170: Ethernet                              , MAC 2C-F0-5D-D7-B9-F1, IP4 169.254.106.146, SubNet 255.255.0.0    , isUp 0 .
+12:12:43.509: [INFO ], info     , PC_Info        ,  170: VirtualBox Host-Only Network          , MAC 0A-00-27-00-00-11, IP4 192.168.56.1   , SubNet 255.255.255.0  , isUp 1 .
+12:12:43.509: [INFO ], info     , PC_Info        ,  170: Ethernet 4                            , MAC 0C-37-96-AD-E4-0C, IP4 169.254.103.255, SubNet 255.255.0.0    , isUp 0 .
+12:12:43.509: [INFO ], info     , PC_Info        ,  170: Connessione alla rete locale (LAN)* 9 , MAC 62-E3-27-20-DB-12, IP4 169.254.136.75 , SubNet 255.255.0.0    , isUp 0 .
+12:12:43.509: [INFO ], info     , PC_Info        ,  170: Connessione alla rete locale (LAN)* 10, MAC 60-E3-27-20-DB-12, IP4 169.254.212.38 , SubNet 255.255.0.0    , isUp 0 .
+12:12:43.509: [INFO ], info     , PC_Info        ,  170: Ethernet 2                            , MAC 00-09-0F-FE-00-01, IP4 169.254.210.254, SubNet 255.255.0.0    , isUp 0 .
+12:12:43.509: [INFO ], info     , PC_Info        ,  170: Wi-Fi                                 , MAC 60-E3-27-20-DB-12, IP4 192.168.178.131, SubNet 255.255.255.0  , isUp 1 .
+12:12:43.510: [INFO ], info     , PC_Info        ,  170: vEthernet (Default Switch)            , MAC 00-15-5D-90-9C-4E, IP4 192.168.240.1  , SubNet 255.255.240.0  , isUp 1 .
+12:12:43.510: [INFO ], info     , PC_Info        ,  170: vEthernet (WSL (Hyper-V firewall))    , MAC 00-15-5D-9B-29-32, IP4 172.27.208.1   , SubNet 255.255.240.0  , isUp 1 .
+12:12:43.510: [INFO ], info     , PC_Info        ,  170: Tailscale                             , MAC                  , IP4 100.124.245.17 , SubNet 255.255.255.255, isUp 1 .
+12:12:43.510: [INFO ], info     , PC_Info        ,  170: Loopback Pseudo-Interface 1           , MAC                  , IP4 127.0.0.1      , SubNet 255.0.0.0      , isUp 1 .
+12:12:43.510: [INFO ], info     , PC_Info        ,  174: 🔌 Only power supplie.
+12:12:43.510: [INFO ], info     , PC_Info        ,  178: Boot Time 2026-06-06 08:29:44.
+12:12:43.511: [INFO ], main     , <module>       , 1398: 💻 Running on LOCAL HOST (Test Mode)
+12:12:43.567: [INFO ], home     , __init__       ,  227: 🚀 SQLAlchemy Engine inizializzato correttamente in home.py!
+12:12:43.567: [INFO ], main     , <module>       , 1408: 🌐 Avvio app HTTP su http://192.168.178.131:8550
+12:12:45.013: [INFO ], flet_static_files, __init__       ,   85: Web renderer configured: WebRenderer.AUTO
+12:12:45.013: [INFO ], flet_static_files, __init__       ,   86: Route URL strategy configured: RouteUrlStrategy.PATH
+12:12:45.013: [INFO ], flet_static_files, __init__       ,   87: No CDN configured: False
+12:12:45.101: [INFO ], flet_app_manager, start          ,   69: Starting up Flet App Manager
+12:12:45.550: [INFO ], flet_app , __init__       ,   77: New FletApp: j7SnH2zb
+12:12:45.555: [INFO ], flet_app_manager, add_session    ,  111: New session created (1 total): _aRY25bIPgZx7ASsD_6eee2841374f629b9a70ecf6eac5bfc539981e62
+12:12:45.565: [INFO ], flet_app , __on_session_created,  150: Start session: aRY25bIPgZx7ASsD
+12:12:45.567: [INFO ], main     , main           , 1039: 🌐 Nuova connessione client:
+12:12:45.567: [INFO ], main     , main           , 1040:   └─ Platform: PagePlatform.WINDOWS
+12:12:45.567: [INFO ], main     , main           , 1041:   └─ User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
+12:12:45.567: [INFO ], main     , main           , 1042:   └─ Session ID: aRY25bIPgZx7ASsD
+12:12:45.567: [INFO ], main     , main           , 1044:   └─ IP Client: 192.168.178.131
+12:12:45.567: [INFO ], main     , main           , 1083:   └─ Browser: Chrome
+12:12:45.567: [INFO ], main     , main           , 1084:   └─ OS: Windows 10/11
+12:12:45.567: [INFO ], main     , main           , 1085:   └─ Full UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
+12:12:45.607: [INFO ], main     , Set_settings   ,  747: 🐛 Debug mode: False
+12:12:46.418: [INFO ], main     , __init__       ,  387: 💻 Running on LOCAL HOST (Test Mode)
+12:12:46.422: [INFO ], mqtt_cust, mqtt_cl_ok     ,   81: Creo nuovo client MQTT per broker=192.168.178.150, port=1883, user=mqtt
+12:12:49.010: [INFO ], main     , on_session_open,  561: Sessione Flet aperta. Sessioni attive: 1
+12:12:49.252: [INFO ], main     , main           , 1336: 🚴 App started successfully.
