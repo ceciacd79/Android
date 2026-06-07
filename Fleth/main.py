@@ -1406,4 +1406,5 @@ if __name__ == "__main__":
     mt = pv(gps_val=gps_val, accu_key=env.get("KEY_OPEN"), debug=debug)
 
     log.info(f"🌐 Avvio app HTTP su http://{IP}:8550")
-    ft.run(main, view=ft.AppView.WEB_BROWSER, host="0.0.0.0", port=8550, assets_dir="assets")
+    #ft.run(main, view=ft.AppView.WEB_BROWSER, host="0.0.0.0", port=8550, assets_dir="assets")
+    ft.app(target=main)
