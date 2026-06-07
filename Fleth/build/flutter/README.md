@@ -1,13 +1,13 @@
-# Flet
+# Fleth
 
 
 
 ## Template variables
 
-* `flet` - project identifier (lowercase, no spaces, i.e. "snake_case") used for bundle IDs and package names.
+* `fleth` - project identifier (lowercase, no spaces, i.e. "snake_case") used for bundle IDs and package names.
 * `` - project description.
-* `Flet` - executable or bundle name on disk.
-* `Flet` - display name shown in window titles and about app dialogs.
+* `Fleth` - executable or bundle name on disk.
+* `Fleth` - display name shown in window titles and about app dialogs.
 * `com.flet` - org name in reverse domain name notation, e.g. `com.mycompany.myproject`.
 * `Your Company` - the name of the company.
 * `Copyright (c) 2026 Your Company` - the copyright notice.

@@ -1,10 +1,10 @@
 # Project-level configuration.
 cmake_minimum_required(VERSION 3.14)
-project(flet LANGUAGES CXX)
+project(fleth LANGUAGES CXX)
 
 # The name of the application target. The on-disk name is set in
 # runner/CMakeLists.txt to keep Flutter tooling behavior intact.
-set(BINARY_NAME "flet")
+set(BINARY_NAME "fleth")
 
 # Explicitly opt in to modern CMake behaviors to avoid warnings with recent
 # versions of CMake.

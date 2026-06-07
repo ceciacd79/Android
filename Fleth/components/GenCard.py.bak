@@ -495,9 +495,8 @@ class GenCard(BaseCard):
                     if ( self.device_name=='E22x4' or self.device_name=='ZBMINIR2' ):
                         control.name = ft.Icons.POWER if is_on else ft.Icons.POWER_OFF
                         control.color = ft.Colors.YELLOW if is_on else ft.Colors.GREY
-                        sw_tr = c_dict.get(key.upper() + '_switch_trailing') or c_dict.get(key.lower() + '_switch_trailing')
-                        if sw_tr:
-                            sw_tr.value = is_on                                                                                 # ⬅️ Questo muoverà fisicamente lo switch su True (ON) o False (OFF)
+                        if hasattr(control, "value"):
+                            control.value = "Open" if is_on else "Close"
                     elif self.device_name=='SNZB-04P':
                         if "porta" in self.name.lower():
                             control.name = ft.Icons.SENSOR_DOOR if is_on else ft.Icons.SENSOR_DOOR_OUTLINED

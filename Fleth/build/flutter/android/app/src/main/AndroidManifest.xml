@@ -11,7 +11,7 @@
 
     <!--  -->
     <application
-        android:label="Flet"
+        android:label="Fleth"
         android:name="${applicationName}"
         android:enableOnBackInvokedCallback="true"
         android:icon="@mipmap/ic_launcher">

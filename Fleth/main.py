@@ -145,6 +145,7 @@ nav_items = [
 
 #   -----   👀  DEFINE          👀  -----   #
 debug = False
+type_app = 1
 
 #   -----   👀  GLOBAL VARIABLE 👀  -----   #
 msg_queue = queue.Queue()
@@ -1406,5 +1407,12 @@ if __name__ == "__main__":
     mt = pv(gps_val=gps_val, accu_key=env.get("KEY_OPEN"), debug=debug)
 
     log.info(f"🌐 Avvio app HTTP su http://{IP}:8550")
-    #ft.run(main, view=ft.AppView.WEB_BROWSER, host="0.0.0.0", port=8550, assets_dir="assets")
-    ft.app(target=main)
+    if type_app == 0:
+        log.info("🚀 Avvio app in modalità WEB BROWSER")
+        ft.run(main, view=ft.AppView.WEB_BROWSER, host="0.0.0.0", port=8550, assets_dir="assets")
+    elif type_app == 1:
+        log.info("🚀 Avvio app in modalità DESKTOP")
+        ft.app(target=main)
+    elif type_app == 2:
+        log.info("🚀 Avvio app in modalità MOBILE")
+   

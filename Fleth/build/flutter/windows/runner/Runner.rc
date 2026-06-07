@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "Your Company" "\0"
-            VALUE "FileDescription", "Flet" "\0"
+            VALUE "FileDescription", "Fleth" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "Flet" "\0"
+            VALUE "InternalName", "Fleth" "\0"
             VALUE "LegalCopyright", "Copyright (c) 2026 Your Company" "\0"
-            VALUE "OriginalFilename", "Flet.exe" "\0"
-            VALUE "ProductName", "Flet" "\0"
+            VALUE "OriginalFilename", "Fleth.exe" "\0"
+            VALUE "ProductName", "Fleth" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
